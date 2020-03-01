@@ -1820,8 +1820,18 @@ public class ActionUtils {
 		waitForAjax(driver);
 	}	
 
-
-
+	public static void openNewBlankTab(WebDriver driver) {
+		((JavascriptExecutor) driver).executeScript("window.open()");
+	}
+	
+	public static void openNewTabAndNavigateToGivenUrl(WebDriver driver, String url) {
+		((JavascriptExecutor) driver).executeScript("window.open('"+url+"')");
+	}
+	
+	public static void openNewTabAndNavigateToGivenUrl2(WebDriver driver, String url) {
+		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL +"t");// open in new tab
+		driver.get(url);
+	}
 
 
 
