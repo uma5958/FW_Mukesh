@@ -470,15 +470,21 @@ public class ActionUtils {
 			waitForElementPresent(driver, (By) fromWebElementAttr);
 			WebElement ele1 = driver.findElement((By)fromWebElementAttr);
 			WebElement ele2 = driver.findElement((By)toWebElementAttr);
-			builder.clickAndHold(ele1).moveToElement(ele2).perform();
-			Thread.sleep(2000);
-			builder.release(ele2).build().perform();
+			Action dragAndDrop = builder.clickAndHold(ele1)
+					.moveByOffset(-1, -1)
+					.moveToElement(ele2)
+					.release(ele2)
+					.build();
+			dragAndDrop.perform();
 		} else {
 			WebElement ele1 = ((WebElement)fromWebElementAttr);
 			WebElement ele2 = ((WebElement)toWebElementAttr);
-			builder.clickAndHold(ele1).moveToElement(ele2).perform();
-			Thread.sleep(2000);
-			builder.release(ele2).build().perform();
+			Action dragAndDrop = builder.clickAndHold(ele1)
+					.moveByOffset(-1, -1)
+					.moveToElement(ele2)
+					.release(ele2)
+					.build();
+			dragAndDrop.perform();
 		}
 	}
 
@@ -1610,15 +1616,21 @@ public class ActionUtils {
 			waitForElementPresent(driver, (By) fromWebElementAttr);
 			WebElement ele1 = driver.findElement((By)fromWebElementAttr);
 			WebElement ele2 = driver.findElement((By)toWebElementAttr);
-			builder.clickAndHold(ele1).moveToElement(ele2).perform();
-			Thread.sleep(2000);
-			builder.release(ele2).build().perform();
+			Action dragAndDrop = builder.clickAndHold(ele1)
+					.moveByOffset(-1, -1)
+					.moveToElement(ele2)
+					.release(ele2)
+					.build();
+			dragAndDrop.perform();
 		} else {
 			WebElement ele1 = ((WebElement)fromWebElementAttr);
 			WebElement ele2 = ((WebElement)toWebElementAttr);
-			builder.clickAndHold(ele1).moveToElement(ele2).perform();
-			Thread.sleep(2000);
-			builder.release(ele2).build().perform();
+			Action dragAndDrop = builder.clickAndHold(ele1)
+					.moveByOffset(-1, -1)
+					.moveToElement(ele2)
+					.release(ele2)
+					.build();
+			dragAndDrop.perform();
 		}
 		waitForAjax(driver);
 	}
